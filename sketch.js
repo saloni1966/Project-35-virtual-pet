@@ -16,7 +16,7 @@ function setup() {
   dog.scale = 0.2
 
   database = firebase.database();
-  foodStock = database.ref("food");
+  foodStock = database.ref("Food");
   foodStock.on("value",readStock);
   
   
@@ -24,7 +24,7 @@ function setup() {
 
 
 function draw() {  
-  background(46,139,87);
+  background("grey");
 
   if(keyWentUp(UP_ARROW)){
     writeStock(foodS);
@@ -33,7 +33,7 @@ function draw() {
   textSize(20);
   fill("red");
   text("FOOD STOCK : " + foodS,100,150);
-  textSize(10);
+  textSize(20);
   text("NOTE: Press UP_ARROW Key To Feed Drago Milk!!",50,50);
 
 
@@ -54,7 +54,7 @@ function writeStock(x){
     x=x-1
   }
   database.ref('/').update({
-    food:x
+    Food:x
   })
 }
 
