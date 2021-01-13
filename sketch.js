@@ -24,7 +24,7 @@ function setup() {
 
 
 function draw() {  
-  background("grey");
+  background("blue");
 
   if(keyWentUp(UP_ARROW)){
     writeStock(foodS);
